@@ -521,3 +521,29 @@ on Cstm.customer_id = pay.payment_id;
 
 SELECT * FROM departments
 CROSS JOIN categories;
+
+--!give me list of all the customer who did not place order yet.
+SELECT * from customers;
+
+
+SELECT * FROM orders
+WHERE status = 'completed';
+
+SELECT * FROM orders
+WHERE status ILIKE 'completed';
+
+select 
+o.order_id,c.first_name,c.last_name,o.order_date,o.Status 
+from orders o 
+left join customers c on 
+o.customer_id = c.customer_id
+where o.status = 'completed'
+
+
+
+select 
+o.order_id,c.first_name,c.last_name,o.order_date,o.Status 
+from customers as c 
+left join orders as o on 
+o.customer_id = c.customer_id
+where o.status is null;
