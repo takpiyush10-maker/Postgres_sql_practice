@@ -74,3 +74,19 @@ SELECT*FROM Employees;
 
 ALTER TABLE employees
 DROP COLUMN INTERNAL_NOTES;
+
+
+-- Create sample tables
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    course_id INT
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50)
+);
+
+
+
